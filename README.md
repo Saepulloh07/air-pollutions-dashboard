@@ -22,12 +22,12 @@
 
 1. Create a new directory:
     ```bash
-    mkdir Submission
+    mkdir air-pollutions-dashboard
     ```
 
 2. Navigate to the new directory:
     ```bash
-    cd Submission
+    cd air-pollutions-dashboard
     ```
 
 3. Install pipenv if not already installed:
