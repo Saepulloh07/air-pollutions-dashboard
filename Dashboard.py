@@ -16,9 +16,9 @@ station = st.sidebar.selectbox('Station', sorted(data['station'].unique()))
 # Filter data based on user input
 filtered_data = data[(data['year'] == year) & (data['station'] == station)]
 
-st.header('Air Quality Dashboard')
+st.header('Weighted Blanket Monitoring')
 # Pertanyaan 1: Variasi konsentrasi O3 harian berkaitan dengan perubahan suhu harian dan radiasi matahari
-st.header('Variasi Konsentrasi O3 Harian dan Perubahan Suhu Harian')
+st.header('Variasi Perubahan Suhu Harian')
 daily_data = filtered_data.groupby('day').agg({'O3': 'mean', 'TEMP': 'mean'}).reset_index()
 fig1, ax1 = plt.subplots()
 sns.lineplot(data=daily_data, x='day', y='O3', ax=ax1, label='O3')
