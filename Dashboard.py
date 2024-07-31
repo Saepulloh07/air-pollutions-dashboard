@@ -18,7 +18,7 @@ filtered_data = data[(data['year'] == year) & (data['station'] == station)]
 
 st.header('Weighted Blanket Monitoring')
 # Pertanyaan 1: Variasi konsentrasi O3 harian berkaitan dengan perubahan suhu harian dan radiasi matahari
-st.header('Variasi Perubahan Suhu Harian')
+st.header('Variasi Perubahan Gerakan Harian')
 daily_data = filtered_data.groupby('day').agg({'O3': 'mean', 'TEMP': 'mean'}).reset_index()
 fig1, ax1 = plt.subplots()
 sns.lineplot(data=daily_data, x='day', y='O3', ax=ax1, label='O3')
@@ -30,7 +30,7 @@ ax2.set_ylabel('Temperature')
 st.pyplot(fig1)
 
 # Pertanyaan 2: Pola musiman dalam tingkat polusi PM10 dan hubungan dengan curah hujan bulanan
-st.header('Pola Musiman Tingkat Polusi PM10 dan Curah Hujan Bulanan')
+st.header('Pola Perubahan Dengkuran')
 monthly_data = filtered_data.groupby('month').agg({'PM10': 'mean', 'RAIN': 'sum'}).reset_index()
 fig2, ax3 = plt.subplots()
 sns.barplot(data=monthly_data, x='month', y='PM10', ax=ax3, label='PM10')
